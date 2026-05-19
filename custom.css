@@ -1,0 +1,135 @@
+/* Section 1 - Background overlay */
+#section-1 {
+  position: relative;
+}
+
+#section-1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../images/encuestas_precandidatos_2024_slide-3.jpg') center / cover no-repeat;
+  opacity: 0.1;
+  z-index: 0;
+}
+
+/* Prensa Section */
+#prensa-section {
+  position: relative;
+  height: 65vh;
+  background-color: #0061408c;
+}
+
+#prensa-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../images/FP-TV-4e4e9bdf.webp') center / cover no-repeat;
+  z-index: -1;
+}
+
+/* Navigation Partido */
+.n-partido a.btn:hover {
+  background-color: #27ae60;
+  color: #fff !important;
+}
+
+/* Panels (biografías) */
+.pfp-panel[hidden] {
+  display: none !important;
+}
+
+.n-partido .btn.is-active {
+  background-color: #198754;
+  color: #fff !important;
+}
+
+.pfp-panel {
+  position: relative;
+  padding: 50px 0;
+  display: flex;
+  align-items: center;
+  height: 500px;
+}
+
+.pfp-panel img {
+  object-fit: contain;
+}
+
+.pfp-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('../images/fp-background-section-biografia.png') center / cover no-repeat;
+  z-index: -1;
+}
+
+/* Docs Section Responsive */
+@media screen and (max-width: 991px) {
+  #docs .feature-box .d-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  #docs .feature-box .p-3.flex-fill {
+    max-width: 100% !important;
+    margin-bottom: 15px;
+  }
+
+  #docs .feature-box .text-center.p-3 {
+    flex: unset !important;
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+  .n-partido {
+    flex-direction: column !important;
+    align-items: unset !important;
+  }
+
+  #prensa-section {
+    padding: 50px 0;
+  }
+
+  #prensa-section .prensa-link {
+    margin-top: 15px;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Search Highlight */
+mark.highlight {
+  background-color: #ffe600;
+  color: #000;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* Header overlay para index.html - Mejora visibilidad del header transparente */
+body:has(#slider) header.header-light.bg-transparent {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%) !important;
+}
+
+/* Overlay oscuro en la parte superior del slider para mejor contraste */
+#slider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+#slider {
+  position: relative;
+}
